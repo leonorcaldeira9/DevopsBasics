@@ -21,10 +21,10 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     
-- task: CopyFiles@2
-  inputs:
-    Contents: '**/.war'
-    targetfolder: '$(Build.ArtifactStagingDirectory)'
+#- task: CopyFiles@2
+#  inputs:
+#    Contents: '**/.war'
+#    targetfolder: '$(Build.ArtifactStagingDirectory)'
     
 # - task: PublishBuildArtifacts@1
 #  inputs:
@@ -32,6 +32,10 @@ steps:
 #    ArtifactName: 'warfile'
 #    publishLocation: 'Container'
 
+- task: CopyFiles@2
+  inputs:
+    targetFolder: '$(Build.ArtifactStagingDirectory)'    
+ 
 - task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
   inputs:
