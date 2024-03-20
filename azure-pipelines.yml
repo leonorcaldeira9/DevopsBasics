@@ -33,8 +33,6 @@ steps:
 #    publishLocation: 'Container'
 
 - task: PublishBuildArtifacts@1    
-  displayName: 'Publish Artifact: warfile'
+  displayName: 'Publish Artifact: drop'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
-    #ArtifactName: 'warfile'
-    publishLocation: 'Container'
